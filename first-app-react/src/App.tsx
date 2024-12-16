@@ -1,35 +1,62 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
+import { TODOAPPBody } from "./components/project1/TODOAppBody";
+import { TODOAPP } from "./components/project1/TODOAppContainer";
+import { TodoItem1 } from "./components/project1/TODOItem1";
+import { Todoitem2 } from "./components/project1/TodoItem2";
+import "./App.css";
+import Hello from "./Hello";
+import LikeButton from "./likebutton";
+import { ClockHeading } from "./components/project2/ClockHeading";
+import { ClockSlogan } from "./components/project2/ClockSlogan";
+import { CurrentTime } from "./components/project2/ClockCurrentTime";
 function App() {
-  const [count, setCount] = useState(0)
+  /*============================== first component implementation =======================*/
+  // return <div><h1>
+  //   hello world
+  // </h1>
+  // {/* <LikeButton></LikeButton> */}
+  // <Hello></Hello>
+  // </div>
+  /*============================== end ===================================================*/
 
+  /*===========================todo project implementation===============================*/
+  // return (
+  //   <center className="todo-container">
+  //     <div>
+  //       <TODOAPP></TODOAPP>
+  //       <div className="todo-body">
+  //         <TODOAPPBody></TODOAPPBody>
+  //         <TodoItem1></TodoItem1>
+  //         <Todoitem2></Todoitem2>
+  //       </div>
+  //     </div>
+  //   </center>
+  // );
+  /*========================todo project implementation end ==========================*/
+
+  /*=========================Bharat clock Implememntation =========================== */
+  // return (
+  //   <div>
+  //     <ClockHeading></ClockHeading>
+  //     <ClockSlogan></ClockSlogan>
+  //     <CurrentTime></CurrentTime>
+  //   </div>
+  // );
+  /*================================end==============================================*/
+
+  /*============================map and fragments ================================== */
+  let foodItems = ["Dal", "GreenPeans", "GreenLeaves", "Panner"];
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <h1>health food iteams</h1>
+      <ul className="list-group">
+        {foodItems.map((item) => (
+          <li className="list-group-item" key={item}>
+            {item}
+          </li>
+        ))}
+      </ul>
     </>
-  )
+  );
+  /* -------------------------------end==============================================*/
 }
-
-export default App
+export default App;
